@@ -7,4 +7,11 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing:border-box;
 }
 
+body{
+  font-family: "Roboto", sans-serif;
+  //font-family: "Baloo 2", sans-serif;
+  background-color:${({theme})=> theme["base-background"]};
+  -webkit-font-smoothing: antialiased;
+}
+
 `
