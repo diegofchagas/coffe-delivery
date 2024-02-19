@@ -13,5 +13,4 @@ body{
   background-color:${({theme})=> theme["base-background"]};
   -webkit-font-smoothing: antialiased;
 }
-
 `
