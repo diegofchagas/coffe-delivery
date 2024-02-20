@@ -38,7 +38,9 @@ display:flex;
 align-items:center;
 gap:1rem;
 flex-wrap:wrap;
-margin-top:-4.5rem;
+margin-top:-4rem;
+
+
 
 img{
   margin-top:-2rem;

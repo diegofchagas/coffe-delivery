@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+background-color:${({theme})=> theme['base-background']};
 padding:2rem;
 display:flex;
 justify-content:space-between;
@@ -9,7 +10,7 @@ justify-content:space-between;
 export const NavContainer = styled.div`
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:0.75rem;
 `;
 
 export const LocalizacaoContainer = styled.div`
