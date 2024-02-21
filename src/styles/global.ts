@@ -13,4 +13,8 @@ body{
   background-color:${({theme})=> theme["base-background"]};
   -webkit-font-smoothing: antialiased;
 }
-`
+
+button,input{
+  font-family: "Roboto", sans-serif;
+}
+`;
