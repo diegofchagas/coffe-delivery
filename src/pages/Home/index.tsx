@@ -1,5 +1,5 @@
 import { About } from "../../components/About";
-import { CardCoffe } from "./components/CardCoffe";
+import { CardCoffe } from "../../components/CardCoffe";
 import {coffeTypes} from "../../DataCoffeTypes/coffesTypes"
 
 import { ContainerHome } from "./styles";
