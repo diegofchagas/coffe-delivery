@@ -1,4 +1,4 @@
-import { About } from "../../components/About";
+import { About } from "./Components/About";
 import { CardCoffe } from "../../components/CardCoffe";
 import {coffeTypes} from "../../DataCoffeTypes/coffesTypes"
 
@@ -8,7 +8,7 @@ import { ContainerHome } from "./styles";
 export const Home = () => {
   return (
     <ContainerHome>
-      <About />
+      <About/>
       <h1>Nossos cafés</h1>
 
       <section className="teste">

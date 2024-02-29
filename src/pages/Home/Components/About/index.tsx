@@ -1,8 +1,8 @@
-import copo from "../../assets/copo-cafe.svg";
-import carrinho from "../../assets/carrinho.svg";
-import embalagem from "../../assets/embalagem.svg";
-import relogio from "../../assets/relogio.svg";
-import cafe from "../../assets/cafe.svg";
+import copo from "../../../../assets/copo-cafe.svg";
+import carrinho from "../../../../assets/carrinho.svg";
+import embalagem from "../../../../assets/embalagem.svg";
+import relogio from "../../../../assets/relogio.svg";
+import cafe from "../../../../assets/cafe.svg";
 import { Banner, ContainerAbout, InfoContainer } from "./style";
 
 export const About = () => {
