@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   max-width: 16rem;
-  padding: 10px 20px;
+  padding: .625rem 1.25rem;
   background-color: ${({ theme }) => theme["base-card"]};
   border-radius: 6px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   img {
     margin-top: -2rem;
