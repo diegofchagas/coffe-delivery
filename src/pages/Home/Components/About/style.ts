@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const ContainerAbout = styled.section`
   margin-top:5rem;
+  margin-bottom:9rem;
   display:grid;
   grid-template-columns: 2fr 1fr;
+ 
   
   img{
     grid-column:2;
