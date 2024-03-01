@@ -1,6 +1,6 @@
 import { ShoppingCartSimple } from "@phosphor-icons/react";
 import {CardContainer, CarrinhoButton, FooterContainer } from "./style";
-import { QuantityButton } from "../QuantityButton";
+import { QuantityButton } from "../../../../components/QuantityButton";
 
 interface CoffeTypes {
   image: string;
