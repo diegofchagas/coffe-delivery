@@ -11,6 +11,7 @@ body{
   font-family: "Roboto", sans-serif;
   //font-family: "Baloo 2", sans-serif;
   background-color:${({theme})=> theme["base-background"]};
+  color:${({theme})=> theme["base-text"]};
   -webkit-font-smoothing: antialiased;
 }
 
