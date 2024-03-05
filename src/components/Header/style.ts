@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const HeaderContainer = styled.header`
 background-color:${({theme})=> theme['base-background']};
@@ -13,20 +13,34 @@ export const NavContainer = styled.div`
   gap:0.75rem;
 `;
 
-export const LocalizacaoContainer = styled.div`
-  background-color:${({theme})=> theme['purple-light']};
-  border-radius: 6px;
-  padding:8px;
-  display:flex;
-  align-items:center;
-  gap:4px;
 
-  span{
-    font-size:.875rem;
-    line-height:130%;
-    color:${({theme})=> theme['purle-dark']};
-    font-weight: 400;
-    
-  }
-`
-;
+interface HeaderButtonProps {
+  variant: "purple" | "yellow";
+}
+
+export const HeaderButton = styled.button<HeaderButtonProps>`
+border:none;
+border-radius:6px;
+padding: 0 0.5rem;
+min-width:2.3rem;
+height:2.3rem;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:4px;
+cursor: pointer;
+
+${({ variant }) => css`
+    background: ${({ theme }) => theme[`${variant}-light`]};
+    color: ${({ theme }) => theme[`${variant}-dark`]};
+  `}
+
+  ${({ variant }) =>
+    variant === "purple" &&
+    css`
+      svg {
+        color: ${({ theme }) => theme[`${variant}`]};
+      }
+    `}
+
+`;

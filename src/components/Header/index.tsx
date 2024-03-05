@@ -1,7 +1,10 @@
 import logo from "../../assets/Logo.svg";
-import carrinho from "../../assets/Cart.svg";
-import localizacao from "../../assets/localização.svg";
-import { HeaderContainer, LocalizacaoContainer, NavContainer } from "./style";
+import {
+  HeaderButton,
+  HeaderContainer,
+  NavContainer,
+} from "./style";
+import { MapPin, ShoppingCart } from "@phosphor-icons/react";
 
 export const Header = () => {
   return (
@@ -9,11 +12,13 @@ export const Header = () => {
       <img src={logo} alt="" />
 
       <NavContainer>
-        <LocalizacaoContainer>
-          <img src={localizacao} alt="" />
-          <span>Barbacena, MG</span>
-        </LocalizacaoContainer>
-        <img src={carrinho} alt="" />
+          <HeaderButton variant="purple">
+            <MapPin size={20} weight="fill" />
+            Barbacena, MG
+          </HeaderButton>
+        <HeaderButton variant="yellow">
+          <ShoppingCart size={20} weight="fill" />
+        </HeaderButton>
       </NavContainer>
     </HeaderContainer>
   );
