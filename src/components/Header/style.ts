@@ -5,6 +5,9 @@ background-color:${({theme})=> theme['base-background']};
 padding:2rem;
 display:flex;
 justify-content:space-between;
+position:sticky;
+inset:0;
+z-index:10;
 `;
 
 export const NavContainer = styled.div`
