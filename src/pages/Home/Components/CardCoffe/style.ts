@@ -4,12 +4,14 @@ export const CardContainer = styled.div`
   max-width: 16rem;
   padding: .625rem 1.25rem;
   background-color: ${({ theme }) => theme["base-card"]};
-  border-radius: 6px 36px;
+  border-radius: 6px 36px 6px 36px;
   display: flex;
   flex-direction: column;
+  justify-content:center;
   align-items: center;
   gap: 1rem;
   margin-top: 3rem;
+  text-align: center;
 
   img {
     margin-top: -2rem;
@@ -40,11 +42,10 @@ export const CardContainer = styled.div`
     color: ${({ theme }) => theme["base-label"]};
     font-size: 0.875rem;
     line-height: 130%;
-    text-align: center;
   }
 `;
 
-export const FooterContainer = styled.div`
+export const CardFooter = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -68,7 +69,7 @@ export const FooterContainer = styled.div`
 
 export const CarrinhoButton = styled.button`
   border: none;
-  background-color: ${({ theme }) => theme["purle-dark"]};
+  background-color: ${({ theme }) => theme["purple-dark"]};
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
