@@ -4,7 +4,7 @@ import { Button } from "./style";
 interface ButtonProps {
   title: string;
   onClick?: () => void;
-  Icon: React.ComponentType<IconProps>;
+  Icon?: React.ComponentType<IconProps>;
   size: number;
 }
 

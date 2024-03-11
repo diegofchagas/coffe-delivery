@@ -11,7 +11,7 @@ export const Home = () => {
       <h2>Nossos cafés</h2>
       <section className="cards-coffes-types">
         {coffeTypes.map((coffes) => (
-          <CardCoffe coffes={coffes} />
+          <CardCoffe key={coffes.id} coffes={coffes} />
         ))}
       </section>
     </ContainerHome>

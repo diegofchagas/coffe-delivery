@@ -1,12 +1,16 @@
 import { ShoppingCartSimple } from "@phosphor-icons/react";
-import {CardContainer, CarrinhoButton, FooterContainer } from "./style";
+import {CardContainer, CardFooter, CarrinhoButton } from "./style";
 import { QuantityButton } from "../../../../components/QuantityButton";
+import { formatMoney } from "../../../../utils/formatMoney";
 
-interface CoffeTypes {
+
+export interface CoffeTypes {
+  id:number,
   image: string;
   type: string[];
   name: string;
   description: string;
+  price:number
 }
 
 interface CardCoffeProps {
@@ -14,6 +18,7 @@ interface CardCoffeProps {
 }
 
 export const CardCoffe = ({ coffes }: CardCoffeProps) => {
+ const formattedPrice = formatMoney(coffes.price)
 
   return (
         <CardContainer>
@@ -25,13 +30,13 @@ export const CardCoffe = ({ coffes }: CardCoffeProps) => {
           <p>
           {coffes.description} 
           </p>
-          <FooterContainer>
-          <small className="price">R$ <strong>9,90</strong></small>
+          <CardFooter>
+          <small className="price">R$ <strong>{formattedPrice}</strong></small>
           <QuantityButton/>
           <CarrinhoButton>
           <ShoppingCartSimple size={22} weight="fill" color="white"  />
           </CarrinhoButton>
-          </FooterContainer>
+          </CardFooter>
         </CardContainer>
   );
 };

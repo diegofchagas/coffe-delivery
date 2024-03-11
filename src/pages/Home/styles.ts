@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerHome = styled.main`
-  margin-left: 2rem;
+  margin-bottom:9.8rem;
 
   h2{
   font-family: "Baloo 2", sans-serif;
@@ -12,7 +12,9 @@ export const ContainerHome = styled.main`
 
   .cards-coffes-types {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap:2rem;
+    row-gap:2.5rem;
+    margin-top:3rem;
   }
 `;

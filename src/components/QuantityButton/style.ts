@@ -5,9 +5,8 @@ background-color:${({theme})=> theme["base-button"]};
 padding:.5rem;
 border-radius:6px;
 
-
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
 gap:4px;
 
