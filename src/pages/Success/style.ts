@@ -27,14 +27,24 @@ export const GridContainer = styled.div`
 `;
 
 export const DataDeliveryContainer = styled.div`
+background:${({theme})=> theme['base-background']};
 max-width:33.5rem;
 border-radius: 6px 36px;
-border:1px solid ${({theme})=> theme.yellow};
 padding:2.5rem;
 display:flex;
 flex-direction:column;
 align-items: flex-start;
 gap:2rem;
+position: relative;
+
+&::before{
+content:"";
+position: absolute;
+inset:-1px;
+z-index:-1;
+border-radius: 7px 37px;
+background:linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
+}
 `;
 
 export const DataDeliveryClient = styled.div`
