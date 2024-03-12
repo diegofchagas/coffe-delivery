@@ -1,26 +1,50 @@
-import tradicional from "../../../../assets/coffes/expresso-tradicional.svg";
-
 import { QuantityButton } from "../../../../components/QuantityButton";
 
 import { Trash } from "@phosphor-icons/react";
 import { ButtonsContainer, CoffeSelectContainer } from "./style";
+import { CartContext, CartItem } from "../../../../contexts/CartContext";
+import { formatMoney } from "../../../../utils/formatMoney";
+import { useContext } from "react";
 
-export const CardCoffeSelection = () => {
+interface CoffeeCartCardProps{
+  coffee:CartItem
+}
+
+export const CardCoffeSelection = ({coffee}:CoffeeCartCardProps) => {
+  const coffeeTotal = coffee.price * coffee.quantity
+  const formattedPrice = formatMoney(coffeeTotal);
+
+  const {changeCartItemQuantity,removeCartItem} = useContext(CartContext)
+
+  function handleIncrement(event){
+    event.preventDefault()
+    changeCartItemQuantity(coffee.id , 'increment')
+  }
+
+  function handleDecrement(event){
+    event.preventDefault()
+    changeCartItemQuantity(coffee.id, 'decrement')
+  }
+
   return (
     <>
       <CoffeSelectContainer>
-        <img src={tradicional} alt="" />
+        <img src={coffee.image} alt="" />
         <ButtonsContainer>
-        <span className="type-coffe">Expresso Tradicional</span>
+        <span className="type-coffe">{coffee.name}</span>
         <div className="types-buttons">
-        <QuantityButton />
-        <button>
+        <QuantityButton 
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        quantity={coffee.quantity}
+        />
+        <button onClick={() =>removeCartItem(coffee.id)}>
           <Trash size={16} color="#8047F8"/>
           REMOVER
         </button>
         </div>
         </ButtonsContainer>
-        <strong>R$ 9,90</strong>
+        <strong>R$ {formattedPrice}</strong>
       </CoffeSelectContainer>
     </>
   );
