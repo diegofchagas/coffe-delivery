@@ -1,8 +1,12 @@
 import {Bank,CreditCard,CurrencyDollar,Money,} from "@phosphor-icons/react";
 import { PaymentsContainer } from './style'
 import { ButtonComponent } from '../ButtonCard'
+import { useContext } from "react";
+import { CartContext } from "../../../../contexts/CartContext";
 
 export const PaymentMethodOptions = () => {
+  const {selectedPayment, uptadedMethodPayment} = useContext(CartContext)
+
   return (
     <PaymentsContainer>
     <p>
@@ -17,16 +21,23 @@ export const PaymentMethodOptions = () => {
         title=" Cartão de crédito"
         Icon={CreditCard}
         size={16}
+        selected={selectedPayment === 'crédito'}
+        onClick={()=> uptadedMethodPayment('crédito')}
       />
       <ButtonComponent 
       title=" Cartão de débito" 
       Icon={Bank} 
-      size={16} 
+      size={16}
+      selected={selectedPayment === 'débito'}
+      onClick={()=> uptadedMethodPayment('débito')}
       />
       <ButtonComponent 
-      title=" dinheiro" 
+      title="dinheiro" 
       Icon={Money} 
-      size={16} />
+      size={16}
+      selected={selectedPayment === 'dinheiro'}
+      onClick={()=> uptadedMethodPayment('dinheiro')}
+      />
     </div>
   </PaymentsContainer>
   )

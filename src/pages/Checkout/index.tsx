@@ -1,14 +1,18 @@
-import {ChekoutContainer} from "./style";
+import { useCallback, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import {z} from 'zod'
-import { useCallback, useEffect } from "react";
+
 import axios from "axios";
+
 import { zipCodeMask } from "../../utils/zipCodeMask";
 import { CoffeSelected } from "./components/CoffeSelected";
 import { CompleteOrdeForm } from "./components/CompleteOrderForm";
 
+import {ChekoutContainer} from "./style";
+import { CartContext } from "../../contexts/CartContext";
 
 const registerUserFormSchema = z
   .object({
@@ -25,18 +29,21 @@ const registerUserFormSchema = z
   .transform((field) => ({
     address: {
       zipCode: field.address.zipCode,
-      street: field.address.zipCode,
-      number: field.address.zipCode,
-      complement: field.address.zipCode,
-      district: field.address.zipCode,
-      city: field.address.zipCode,
-      stateOf: field.address.zipCode,
+      street: field.address.street,
+      number: field.address.number,
+      complement: field.address.complement,
+      district: field.address.district,
+      city: field.address.city,
+      stateOf: field.address.stateOf,
     },
   }));
 
-type registerUserFormData = z.infer<typeof registerUserFormSchema>;
+export type registerUserFormData = z.infer<typeof registerUserFormSchema>;
 
 export const Checkout = () => {
+  const {cleanCart} = useContext(CartContext)
+  const navigate = useNavigate();
+
   const registerAddressUser = useForm<registerUserFormData>({
     resolver: zodResolver(registerUserFormSchema),
     defaultValues: {
@@ -49,6 +56,7 @@ export const Checkout = () => {
         city: "",
         stateOf: "",
       },
+
     },
   });
 
@@ -57,7 +65,10 @@ export const Checkout = () => {
   const zipCode = watch("address.zipCode");
 
   const newRegisterUserAdress = (data: registerUserFormData) => {
-    console.log(data);
+    navigate('/success',{
+      state: data
+    })
+    cleanCart()
   };
 
   const handleFetchAddress = useCallback(
@@ -88,10 +99,10 @@ export const Checkout = () => {
 
   return (
     <FormProvider {...registerAddressUser}>
-      <ChekoutContainer>
+      <ChekoutContainer onSubmit={handleSubmit(newRegisterUserAdress)}>
         <CompleteOrdeForm/>
         <CoffeSelected />
       </ChekoutContainer>
-    </FormProvider>
+      </FormProvider>
   );
 };

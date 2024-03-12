@@ -2,8 +2,29 @@ import deliveryman from "../../assets/Illustration.svg";
 import {DataDeliveryContainer,GridContainer,SuccessContainer,} from "./style";
 import { TextWithIcon } from "../../components/TextWithIcon";
 import { CurrencyDollar, MapPin, Timer} from "@phosphor-icons/react";
+import { registerUserFormData } from "../Checkout";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { CartContext } from "../../contexts/CartContext";
+
+interface LocationType{
+  state:registerUserFormData
+}
 
 export const Success = () => {
+  const {selectedPayment} = useContext(CartContext)
+
+  const {state} = useLocation() as unknown as LocationType
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(!state){
+      navigate("/");
+    }
+  },[navigate, state])
+
+  if(!state) return <></>;
+
   return (
     <SuccessContainer>
       <h2>Uhu! Pedido confirmado</h2>
@@ -16,9 +37,9 @@ export const Success = () => {
             iconBg="#8047F8"
             text={
               <p>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>{" "}
+                Entrega em <strong>{state.address.street}, {state.address.number}</strong>{" "}
                 <br />
-                Farrapos - Porto Alegre, RS
+                {state.address.district} - {state.address.city}, {state.address.stateOf}
               </p>
             }
           />
@@ -37,7 +58,7 @@ export const Success = () => {
             iconBg="#C47F17"
             text={
               <p>
-                Pagamento na entrega <br /> <strong>Cartão de crédito</strong>
+                Pagamento na entrega <br /> <strong>{selectedPayment}</strong>
               </p>
             }
           />

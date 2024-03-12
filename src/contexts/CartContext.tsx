@@ -7,11 +7,14 @@ export interface CartItem extends CoffeTypes{
 
 interface CartContextType{
   cartItems:CartItem[];
-  cartCoffesQuantity:number,
-  totalValueCoffes:number,
+  cartCoffesQuantity:number;
+  totalValueCoffes:number;
+  selectedPayment: string;
   addCoffeeToCart: (coffee:CartItem) => void;
   changeCartItemQuantity: (cartItemId:number, type:"increment" | "decrement")=> void;
   removeCartItem: (cartItemId:number)=> void;
+  uptadedMethodPayment: (method: string)=> void;
+  cleanCart:()=> void;
 }
 
 
@@ -23,6 +26,7 @@ export const CartContext = createContext({} as CartContextType)
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [selectedPayment, setSelectedPayment] = useState("")
 
   const cartCoffesQuantity = cartItems.length;
   
@@ -82,9 +86,17 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
       setCartItems(newCartItems)
     }  
   }
-  console.log(cartItems)
+  
+  function uptadedMethodPayment(method:string){
+    setSelectedPayment(method)
+  }
+
+  function cleanCart(){
+  setCartItems([])
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, addCoffeeToCart,cartCoffesQuantity,changeCartItemQuantity,removeCartItem,totalValueCoffes}}>
+    <CartContext.Provider value={{ cartItems, addCoffeeToCart,cartCoffesQuantity,changeCartItemQuantity,removeCartItem,totalValueCoffes, selectedPayment,uptadedMethodPayment,cleanCart }}>
       {children}
     </CartContext.Provider>
   );

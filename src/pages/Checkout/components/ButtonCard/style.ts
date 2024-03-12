@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+interface ButtonStyleProps{
+  selected: boolean
+}
+
+export const Button = styled.button<ButtonStyleProps>`
 border:none;
-background-color:${({theme})=> theme['base-button']};
+background-color:${({theme, selected})=> selected ? theme['purple-light']: theme['base-button']};
+border:1px solid ${({theme, selected})=> selected ? theme['purple'] : theme['base-button']};
 border-radius:6px;
 padding:1rem;
 display:flex;
@@ -15,10 +20,10 @@ line-height:160%;
 text-transform:uppercase;
 cursor: pointer;
 flex:1;
-transition: background-color 1s;
+
 
 &:hover{
-  background-color:${({theme})=> theme['base-hover']};
+  background-color:${({theme,selected})=> selected ? "" : theme['base-hover']};
 }
 
 svg{

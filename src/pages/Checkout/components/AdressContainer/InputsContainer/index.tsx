@@ -4,7 +4,7 @@ import {
 import { Input } from "../../../../../components/Input";
 import { ContainerInputs } from "./styte";
 
-interface FormErrors {
+interface FormInputErrors {
   address?: {
     zipCode?: string;
     street?: string;
@@ -20,7 +20,7 @@ export const InputsContainer = () => {
   const {
     register,
     formState: { errors },
-  } = useFormContext<FormErrors>();
+  } = useFormContext<FormInputErrors>();
 
   return (
     <ContainerInputs>

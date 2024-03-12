@@ -4,8 +4,6 @@ import { ConfirmOrderContainer } from "./styles"
 import { CartContext } from "../../../../contexts/CartContext"
 import { formatMoney } from "../../../../utils/formatMoney"
 
-
-
 const DELIVERY_PRICE = 3.50;
 
 export const ConfirmOrder = () => {
@@ -15,9 +13,7 @@ export const ConfirmOrder = () => {
   const cartTotal = formatMoney(totalValueCoffes)
   const totalDelivery = formatMoney(DELIVERY_PRICE)
   const total = formatMoney(totalValues)
-  console.log(total)
 
- 
   return (
     <ConfirmOrderContainer>
       <div>
@@ -32,7 +28,11 @@ export const ConfirmOrder = () => {
         <span>Total</span>
         <span>R${total}</span>
       </div>
-     <Button text="Confirmar Pedido" disabled={cartCoffesQuantity <= 0}/>
+      <Button
+        type="submit"
+        text="Confirmar Pedido"
+        disabled={cartCoffesQuantity <= 0}
+      />
     </ConfirmOrderContainer>
-  )
+  );
 }

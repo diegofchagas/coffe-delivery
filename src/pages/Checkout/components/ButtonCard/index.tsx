@@ -6,11 +6,12 @@ interface ButtonProps {
   onClick?: () => void;
   Icon?: React.ComponentType<IconProps>;
   size: number;
+  selected: boolean;
 }
 
-export const ButtonComponent = ({title, onClick,Icon,size,}: ButtonProps) => {
+export const ButtonComponent = ({title, onClick,Icon,size,selected}: ButtonProps) => {
   return (
-    <Button onClick={onClick}>
+    <Button type="button" onClick={onClick} selected={selected}>
       <Icon size={size} />
       {title}
     </Button>
