@@ -1,4 +1,5 @@
 import copo from "../../../../assets/copo-cafe.svg";
+import bg from "../../../../assets/about-background.svg"
 import { Banner, Container, ContainerAbout, InfoContainer } from "./style";
 import { TextWithIcon } from "../../../../components/TextWithIcon";
 import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react";
@@ -42,6 +43,7 @@ export const About = () => {
           />
         </InfoContainer>
       </ContainerAbout>
+      <img src={bg} id="bg" alt="" />
     </Container>
   );
 };

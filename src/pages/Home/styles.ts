@@ -15,6 +15,6 @@ export const ContainerHome = styled.main`
     grid-template-columns: repeat(4, 1fr);
     column-gap:2rem;
     row-gap:1.5rem;
-    margin-top:3rem;
+    margin-top:1rem;
   }
 `;

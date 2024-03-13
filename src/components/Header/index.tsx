@@ -12,7 +12,7 @@ import { CartContext } from "../../contexts/CartContext";
 export const Header = () => {
   const {cartCoffesQuantity} =  useContext(CartContext)
   return (
-    <HeaderContainer>
+    <HeaderContainer className="container-basic">
       <NavLink to="/">
       <img src={logo} alt="" />
       </NavLink>
