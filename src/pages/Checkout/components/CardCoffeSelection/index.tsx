@@ -16,13 +16,11 @@ export const CardCoffeSelection = ({coffee}:CoffeeCartCardProps) => {
 
   const {changeCartItemQuantity,removeCartItem} = useContext(CartContext)
 
-  function handleIncrement(event){
-    event.preventDefault()
+  function handleIncrement(){
     changeCartItemQuantity(coffee.id , 'increment')
   }
 
-  function handleDecrement(event){
-    event.preventDefault()
+  function handleDecrement(){
     changeCartItemQuantity(coffee.id, 'decrement')
   }
 

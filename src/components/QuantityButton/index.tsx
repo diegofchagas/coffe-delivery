@@ -11,11 +11,11 @@ export const QuantityButton = ({onIncrement,onDecrement,quantity}:QuantityButton
 
   return (
     <AmountContainer>
-      <Button disabled={quantity <= 1} onClick={onDecrement}>
+      <Button type="button" disabled={quantity <= 1} onClick={onDecrement}>
         <Minus size={14} weight="bold" />
       </Button>
       <span className="quantity">{quantity}</span>
-      <Button onClick={onIncrement}>
+      <Button type="button" onClick={onIncrement}>
         <Plus size={14} weight="bold" />
       </Button>
     </AmountContainer>

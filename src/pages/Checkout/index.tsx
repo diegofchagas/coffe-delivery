@@ -99,7 +99,7 @@ export const Checkout = () => {
 
   return (
     <FormProvider {...registerAddressUser}>
-      <ChekoutContainer onSubmit={handleSubmit(newRegisterUserAdress)}>
+      <ChekoutContainer className="container-basic" onSubmit={handleSubmit(newRegisterUserAdress)}>
         <CompleteOrdeForm/>
         <CoffeSelected />
       </ChekoutContainer>

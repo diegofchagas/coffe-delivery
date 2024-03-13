@@ -19,15 +19,12 @@ interface FormInputErrors {
 export const InputsContainer = () => {
   const {
     register,
-    formState: { errors },
+    // formState: { errors },
   } = useFormContext<FormInputErrors>();
 
   return (
     <ContainerInputs>
       <Input placeholder="Cep" type="text" className="cep" {...register("address.zipCode")} />
-      {errors.address?.zipCode?.message && (
-        <span className="error"> {errors.address.zipCode.message}</span>
-      )}
       <Input placeholder="Rua" type="text" className="street" {...register("address.street")} />
       <Input placeholder="Número" type="text" {...register("address.number")} />
       <Input placeholder="Complemento"type="text" className="complement"{...register("address.complement")}/>

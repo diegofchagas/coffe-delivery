@@ -26,7 +26,7 @@ export const Success = () => {
   if(!state) return <></>;
 
   return (
-    <SuccessContainer>
+    <SuccessContainer className="container-basic">
       <h2>Uhu! Pedido confirmado</h2>
       <p>Agora é só aguardar que logo o café chegará até você</p>
 

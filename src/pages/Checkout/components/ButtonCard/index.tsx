@@ -12,7 +12,7 @@ interface ButtonProps {
 export const ButtonComponent = ({title, onClick,Icon,size,selected}: ButtonProps) => {
   return (
     <Button type="button" onClick={onClick} selected={selected}>
-      <Icon size={size} />
+      {Icon && <Icon size={size} />}
       {title}
     </Button>
   );
