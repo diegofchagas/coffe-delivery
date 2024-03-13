@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+ ## 💻  Coffee Delivery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🔥 Introdução
 
-Currently, two official plugins are available:
+O Coffee Delivery é um serviço de entrega de cafés variados, onde você pode escolher o café desejado, colocá-lo no carrinho e desfrutar à vontade daquele cafezinho que tanto gosta. O mesmo utiliza uma api
+que facilita o preenchimento do seu endereco ao 
+infomar seu cep.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+<img width="700" height="500" src ="./src/assets/coffee-delivery.png" >
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+ ## :rocket: Tecnologias
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+✔️TypeScript
+
+✔️React-vite
+
+✔️Styled-components
+
+✔️ axios
+
+✔️Phosphor Icons
+
+✔️ react-hook-form
+
+✔️ zod
+
+✔️ react-router-dom
+
+
+## ⚙ Configuração
+
+```
+- $ git clone https://github.com/diegofchagas/coffe-delivery.git
+
+- Para instalar as dependências:
+> npm i
+
+- Vá para a pasta do projeto
+
+- Para iniciar a aplicação:
+> npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 🆙 Atualizações futuras
+
+- Salvar pedidos no localStorage.
+- Adicionar responsividade ao projeto.
+- Adiconar useReducer ao mesmo.
+
+## Desenvolvedor 
+<span style="font-size: larger;">**Diego Chagas**</span>
