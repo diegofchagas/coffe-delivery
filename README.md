@@ -7,7 +7,7 @@ que facilita o preenchimento do seu endereco ao
 infomar seu cep.
 
 
-<img width="700" height="500" src ="./src/assets/coffee-delivery.png" >
+<img width="900" height="700" src ="./src/assets/coffee-delivery.png" >
 
 
  ## :rocket: Tecnologias
