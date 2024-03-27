@@ -8,6 +8,12 @@ justify-content:space-between;
 position:sticky;
 inset:0;
 z-index:10;
+
+@media (max-width:768px) {
+    img{
+      width: 3.75rem;
+    }
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -66,5 +72,9 @@ ${({ variant }) => css`
         color: ${({ theme }) => theme[`${variant}`]};
       }
     `}
+
+    @media (max-width:768px) {
+      font-size: .655rem;
+    }
 
 `;

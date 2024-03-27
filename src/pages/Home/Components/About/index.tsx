@@ -19,7 +19,7 @@ export const About = () => {
             qualquer hora
           </p>
         </Banner>
-        <img src={copo} alt="" />
+        <img className="logo-coffee" src={copo} alt="" />
         <InfoContainer>
           <TextWithIcon
             iconBg="#C47F17"
