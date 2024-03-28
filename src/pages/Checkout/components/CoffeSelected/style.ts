@@ -10,10 +10,15 @@ export const CoffeSelectedContainer = styled.div`
   }
 
   > div {
-    width: 28rem;
+    max-width: 28rem;
     background-color: ${({ theme }) => theme["base-card"]};
     padding: 2.5rem;
     border-radius: 6px;
     border-radius: 6px 44px;
+  }
+
+  @media (max-width:900px) {
+    margin-top:1rem;
+    margin-left:2rem;
   }
 `;

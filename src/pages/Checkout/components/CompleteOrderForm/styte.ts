@@ -5,4 +5,8 @@ export const CompleteOrderContainer = styled.div`
   display:flex;
   flex-direction:column;
   gap: .75rem;
+  
+  @media (max-width:900px) {
+    max-width: 35rem;
+  }
 `;

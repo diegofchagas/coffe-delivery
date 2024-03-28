@@ -19,4 +19,8 @@ export const ContainerInputs = styled.div`
   .complement {
     grid-column: span 2;
   }
+
+  @media (max-width:900px) {
+    grid-template-columns: 10.5rem 15.25rem 2.75rem;
+  }
 `;

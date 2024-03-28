@@ -5,4 +5,9 @@ export const ChekoutContainer = styled.form`
   margin-top: 2.5rem;
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 900px) {
+    flex-direction:column;
+  }
+
 `;

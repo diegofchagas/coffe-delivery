@@ -103,7 +103,7 @@ export const InfoContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
-  
+  margin-top:-5rem;
 
   @media (max-width: 1000px) {
   }

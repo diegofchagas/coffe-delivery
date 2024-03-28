@@ -29,4 +29,8 @@ flex:1;
 svg{
   color:${({theme})=> theme.purple};
 }
+
+@media (max-width:900px) {
+  padding:.875rem;
+}
 `;

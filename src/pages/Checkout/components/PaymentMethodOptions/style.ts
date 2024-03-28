@@ -28,4 +28,8 @@ div{
   gap:.75rem;
   margin-top:2rem;
 }
+
+@media (max-width:900px) {
+  padding:1.5rem;
+}
 `;
